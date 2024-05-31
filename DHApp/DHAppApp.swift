@@ -1,17 +1,42 @@
 //
-//  DHAppApp.swift
-//  DHApp
+//  interactiveAppsApp.swift
+//  interactiveApps
 //
-//  Created by Ong Eason on 31/5/2024.
+//  Created by Ong Eason on 15/1/2024.
 //
 
 import SwiftUI
 
 @main
-struct DHAppApp: App {
+struct interactiveAppsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView_TabItems()
+            TabView {
+                
+                Text("Plus")
+                    .tabItem {
+                        Image(systemName: "plus")
+                        Text("Plus")
+                    }
+                
+                Text("Minus")
+                    .tabItem {
+                        Image(systemName: "minus")
+                        Text("Minus")
+                    }
+                
+                Text("Multiply")
+                    .tabItem {
+                        Image(systemName: "multiply")
+                        Text("Multiply")
+                    }
+                Text("Divide")
+                    .tabItem {
+                        Image(systemName: "divide")
+                        Text("Divide")
+                    }
+            }
         }
     }
 }
