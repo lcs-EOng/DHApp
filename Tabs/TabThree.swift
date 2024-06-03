@@ -23,8 +23,20 @@ struct TabThree: View {
         VStack{
             Spacer()
                 .frame(height: 20)
-            Text("Dinner")
-                .font(.title)
+            HStack{
+                
+                Button(action: {}) {
+                    VStack {
+                        Image(systemName: "clock")
+                        Text("History")
+                            .padding(.horizontal)
+                    }
+                }
+                Text("Dinner")
+                    .font(.title)
+                Spacer()
+                    .frame(width:100 )
+            }
             DatePicker("Date", selection: $date, displayedComponents: .date)
                 .frame(height: 50)
                 .padding()

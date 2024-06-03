@@ -35,6 +35,7 @@ struct TabView_TabItems: View {
                     Image(systemName: "cup.and.saucer.fill")
                     Text("Breakfast")
                 }
+            
             TabTwo()
                 .tabItem {
                     Image(systemName: "takeoutbag.and.cup.and.straw.fill")
@@ -53,7 +54,13 @@ struct TabView_TabItems: View {
            
                     
                 }
-        }
+        .onAppear {
+        let appearance = UITabBarAppearance()
+        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        appearance.backgroundColor = UIColor(Color.green.opacity(0.2))
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+        }        }
     }
 
 

@@ -14,32 +14,37 @@ struct TabFour: View {
         ZStack{
             Rectangle()
                 .frame(height: 1000)
-                .foregroundColor(.green)
+                .foregroundColor(.white)
             VStack{
-                Text("Options")
-                    .font(.title)
-                    
-                    .bold()
-                Toggle(isOn: $isOn) {
-                    Text("Dark Mode")
+                Image("LCS")
+                    .resizable()
+                    .scaledToFit()
+                VStack{
+                    Text("Options")
                         .font(.title)
+                    
+                        .bold()
+                    Toggle(isOn: $isOn) {
+                        Text("Dark Mode")
+                            .font(.title)
+                    }
+                    Spacer()
+                        .frame(height: 50)
+                    Button(action: {}) {
+                        Text("Log Out?")
+                            .padding(12)
+                            .foregroundStyle(.white)
+                            .background(Color.black)
+                            .shadow(color: Color.black, radius: 10, y: 5)
+                    }
                 }
-                Spacer()
-                    .frame(height: 50)
-                Button(action: {}) {
-                Text("Log Out?")
-                .padding(12)
-                .foregroundStyle(.white)
-                .background(Color.black)
-                .shadow(color: Color.black, radius: 10, y: 5)
-                }
+                .padding()
+                .frame(height: 500)
+                .background(RoundedRectangle(cornerRadius:20)
+                    .fill(Color.red))
             }
-            .padding()
-            .frame(height: 500)
-            .background(RoundedRectangle(cornerRadius:20)
-                .fill(Color.red))
+            
         }
-        
     }
 }
 
