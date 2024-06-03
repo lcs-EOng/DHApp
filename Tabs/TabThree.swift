@@ -8,7 +8,7 @@ import PhotosUI
 import SwiftUI
 
 
-struct TabOne: View {
+struct TabThree: View {
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
     
@@ -23,7 +23,7 @@ struct TabOne: View {
         VStack{
             Spacer()
                 .frame(height: 20)
-            Text("Breakfast")
+            Text("Dinner")
                 .font(.title)
             DatePicker("Date", selection: $date, displayedComponents: .date)
                 .frame(height: 50)
@@ -81,5 +81,5 @@ struct TabOne: View {
 
 
 #Preview {
-    TabOne()
+    TabThree()
 }
