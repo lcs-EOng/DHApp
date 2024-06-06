@@ -16,11 +16,11 @@ struct TabFour: View {
                 .frame(height: 1000)
                 .foregroundColor(.white)
             VStack{
-                Image("LCS")
+                Image("LCS1")
                     .resizable()
                     .scaledToFit()
                 VStack{
-                    Text("Options")
+                    Text("Settings")
                         .font(.title)
                     
                         .bold()
@@ -31,11 +31,18 @@ struct TabFour: View {
                     Spacer()
                         .frame(height: 50)
                     Button(action: {}) {
-                        Text("Log Out?")
+                        Text("Log Out")
                             .padding(12)
                             .foregroundStyle(.white)
                             .background(Color.black)
                             .shadow(color: Color.black, radius: 10, y: 5)
+                    }
+                        Button(action: {}) {
+                            Text("Feedback/Suggestions")
+                                .padding(12)
+                                .foregroundStyle(.white)
+                                .background(Color.green)
+                                .shadow(color: Color.black, radius: 10, y: 5)
                     }
                 }
                 .padding()
