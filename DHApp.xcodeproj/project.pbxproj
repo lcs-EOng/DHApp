@@ -17,6 +17,8 @@
 		26C46D7E2C0E3F22009018B7 /* TabThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C46D7D2C0E3F22009018B7 /* TabThree.swift */; };
 		26C46D802C0E3FD6009018B7 /* TabFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C46D7F2C0E3FD6009018B7 /* TabFour.swift */; };
 		26C46D822C11E790009018B7 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C46D812C11E790009018B7 /* OpeningView.swift */; };
+		26C46D842C11EF4E009018B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C46D832C11EF4E009018B7 /* LoginView.swift */; };
+		26C46D862C11F253009018B7 /* MenuHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C46D852C11F252009018B7 /* MenuHistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		26C46D7D2C0E3F22009018B7 /* TabThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabThree.swift; sourceTree = "<group>"; };
 		26C46D7F2C0E3FD6009018B7 /* TabFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFour.swift; sourceTree = "<group>"; };
 		26C46D812C11E790009018B7 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
+		26C46D832C11EF4E009018B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		26C46D852C11F252009018B7 /* MenuHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,9 @@
 			children = (
 				263CA79F2C0A2621009EAB42 /* DHAppApp.swift */,
 				263CA7A12C0A2621009EAB42 /* ContentView.swift */,
+				26C46D852C11F252009018B7 /* MenuHistoryView.swift */,
 				26C46D812C11E790009018B7 /* OpeningView.swift */,
+				26C46D832C11EF4E009018B7 /* LoginView.swift */,
 				263CA7A32C0A2622009EAB42 /* Assets.xcassets */,
 				263CA7A52C0A2622009EAB42 /* Preview Content */,
 				263CA7B12C0A2D64009EAB42 /* ItemImage.swift */,
@@ -166,10 +172,12 @@
 				26C46D7E2C0E3F22009018B7 /* TabThree.swift in Sources */,
 				26C46D802C0E3FD6009018B7 /* TabFour.swift in Sources */,
 				26C46D7C2C0E3EA9009018B7 /* TabTwo.swift in Sources */,
+				26C46D842C11EF4E009018B7 /* LoginView.swift in Sources */,
 				263CA7B22C0A2D64009EAB42 /* ItemImage.swift in Sources */,
 				263CA7A22C0A2621009EAB42 /* ContentView.swift in Sources */,
 				263CA7B02C0A2BBA009EAB42 /* TabOne.swift in Sources */,
 				263CA7A02C0A2621009EAB42 /* DHAppApp.swift in Sources */,
+				26C46D862C11F253009018B7 /* MenuHistoryView.swift in Sources */,
 				26C46D822C11E790009018B7 /* OpeningView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
