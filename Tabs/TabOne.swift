@@ -1,3 +1,4 @@
+
 //
 //  TabOne.swift
 //  DHApp
@@ -8,7 +9,7 @@ import PhotosUI
 import SwiftUI
 
 
-struct TabOne: View {
+struct Menus: View {
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
     
@@ -18,25 +19,27 @@ struct TabOne: View {
     @State private var textFieldData2 = ""
     @State private var date = Date()
     @State private var isToggleOn = false
+    @State private var meal = 0
     
     var body: some View {
         VStack{
             Spacer()
                 .frame(height: 20)
-            HStack{
-                
-                Button(action: {}) {
-                    VStack {
-                        Image(systemName: "clock")
-                        Text("History")
-                            .padding(.horizontal)
-                    }
-                }
-                Text("Breakfast")
+            
+            Picker("Meals", selection: $meal) {
+            Text("Breakfast").tag(0)
                     .font(.title)
-                Spacer()
-                    .frame(width:100 )
+
+            Text("Lunch").tag(1)
+                    .font(.title)
+
+            Text("Dinner").tag(2)
+                    .font(.title)
+
             }
+            .font(.title)
+                Spacer()
+                    .frame(height: 10 )
             DatePicker("Date", selection: $date, displayedComponents: .date)
                 .frame(height: 50)
                 .padding()
@@ -85,7 +88,15 @@ struct TabOne: View {
                     .accentColor(Color.green)
             }
             
+            
             Spacer()
+            Button(action: {}) {
+                Text("Save Menu")
+                .padding()
+                .foregroundStyle(.white)
+                .background(Color.blue)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                }
             
         }
     }
@@ -93,5 +104,5 @@ struct TabOne: View {
 
 
 #Preview {
-    TabOne()
+    Menus()
 }

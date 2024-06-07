@@ -30,23 +30,23 @@ struct TabView_TabItems: View {
 
     var body: some View{
         TabView{
-            TabOne()
+            BMenuHistoryView()
                 .tabItem {
                     Image(systemName: "cup.and.saucer.fill")
                     Text("Breakfast")
                 }
             
-            TabTwo()
+            LMenu()
                 .tabItem {
                     Image(systemName: "takeoutbag.and.cup.and.straw.fill")
                     Text("Lunch")
                 }
-            TabThree()
+            BMenuHistoryView()
                 .tabItem{
                     Image(systemName: "fork.knife")
                     Text("Dinner")
                 }
-            TabFour()
+           TabFour()
                 .tabItem{
                     Image(systemName: "gearshape.fill")
                     Text("Settings")

@@ -8,35 +8,38 @@ import PhotosUI
 import SwiftUI
 
 
-struct TabTwo: View {
+struct Item: View {
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
     
     // The actual image loaded from the selection that was made
     @State var newItemImage: FoodItemImage?
+    @State private var textFieldData0 = ""
     @State private var textFieldData1 = ""
     @State private var textFieldData2 = ""
     @State private var date = Date()
     @State private var isToggleOn = false
+    @State private var meal = 0
     
     var body: some View {
         VStack{
             Spacer()
                 .frame(height: 20)
-            HStack{
-                
-                Button(action: {}) {
-                    VStack {
-                        Image(systemName: "clock")
-                        Text("History")
-                            .padding(.horizontal)
-                    }
-                }
-                Text("Lunch")
+            
+            Picker("Meals", selection: $meal) {
+                Text("Breakfast").tag(0)
                     .font(.title)
-                Spacer()
-                    .frame(width:100 )
+                
+                Text("Lunch").tag(1)
+                    .font(.title)
+                
+                Text("Dinner").tag(2)
+                    .font(.title)
+                
             }
+            .font(.title)
+            Spacer()
+                .frame(height: 10 )
             DatePicker("Date", selection: $date, displayedComponents: .date)
                 .frame(height: 50)
                 .padding()
@@ -72,8 +75,13 @@ struct TabTwo: View {
                 
             }
             Spacer()
-            .frame(height: 100)
-            TextField("What is the food for breakfast?", text: $textFieldData1)
+                .frame(height: 100)
+            TextField("Name of Food", text: $textFieldData0)
+                .font(.title)
+                .bold()
+                .padding(.horizontal)
+                .padding()
+            TextField("What are the ingridients?", text: $textFieldData1)
                 .padding(.horizontal)
                 .padding()
             TextField("What is the amount of calories?", text: $textFieldData2)
@@ -85,13 +93,22 @@ struct TabTwo: View {
                     .accentColor(Color.green)
             }
             
+            
             Spacer()
+            Button(action: {}) {
+                Text("Save Menu")
+                    .padding()
+                    .foregroundStyle(.white)
+                    .background(Color.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+            }
             
         }
     }
 }
+    
 
 
 #Preview {
-    TabTwo()
+    Item()
 }
