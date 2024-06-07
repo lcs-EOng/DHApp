@@ -20,6 +20,9 @@
 		26F85F742C135F910086BE8F /* LMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F732C135F910086BE8F /* LMenu.swift */; };
 		26F85F762C13623F0086BE8F /* TabFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F752C13623F0086BE8F /* TabFour.swift */; };
 		26F85F782C1362590086BE8F /* DMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F772C1362590086BE8F /* DMenu.swift */; };
+		26F85F7A2C1366970086BE8F /* AddMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F792C1366970086BE8F /* AddMenu.swift */; };
+		26F85F7C2C1367A60086BE8F /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F7B2C1367A60086BE8F /* test.swift */; };
+		26F85F7E2C136B7B0086BE8F /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F7D2C136B7B0086BE8F /* MenuDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		26F85F732C135F910086BE8F /* LMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMenu.swift; sourceTree = "<group>"; };
 		26F85F752C13623F0086BE8F /* TabFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabFour.swift; sourceTree = "<group>"; };
 		26F85F772C1362590086BE8F /* DMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMenu.swift; sourceTree = "<group>"; };
+		26F85F792C1366970086BE8F /* AddMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenu.swift; sourceTree = "<group>"; };
+		26F85F7B2C1367A60086BE8F /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		26F85F7D2C136B7B0086BE8F /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 		263CA7932C0A2620009EAB42 = {
 			isa = PBXGroup;
 			children = (
+				263CA79F2C0A2621009EAB42 /* DHAppApp.swift */,
 				263CA7AE2C0A2BAC009EAB42 /* Tabs */,
 				263CA79E2C0A2621009EAB42 /* DHApp */,
 				263CA79D2C0A2621009EAB42 /* Products */,
@@ -70,9 +77,10 @@
 		263CA79E2C0A2621009EAB42 /* DHApp */ = {
 			isa = PBXGroup;
 			children = (
+				26F85F7D2C136B7B0086BE8F /* MenuDetailView.swift */,
 				26C46D872C11F64E009018B7 /* AddItemView.swift */,
-				263CA79F2C0A2621009EAB42 /* DHAppApp.swift */,
 				263CA7A12C0A2621009EAB42 /* ContentView.swift */,
+				26F85F792C1366970086BE8F /* AddMenu.swift */,
 				26C46D812C11E790009018B7 /* OpeningView.swift */,
 				26C46D832C11EF4E009018B7 /* LoginView.swift */,
 				263CA7A32C0A2622009EAB42 /* Assets.xcassets */,
@@ -97,6 +105,7 @@
 				26F85F732C135F910086BE8F /* LMenu.swift */,
 				26F85F772C1362590086BE8F /* DMenu.swift */,
 				26C46D852C11F252009018B7 /* MenuHistoryView.swift */,
+				26F85F7B2C1367A60086BE8F /* test.swift */,
 				26F85F752C13623F0086BE8F /* TabFour.swift */,
 			);
 			path = Tabs;
@@ -174,12 +183,15 @@
 			files = (
 				26F85F782C1362590086BE8F /* DMenu.swift in Sources */,
 				26C46D842C11EF4E009018B7 /* LoginView.swift in Sources */,
+				26F85F7A2C1366970086BE8F /* AddMenu.swift in Sources */,
+				26F85F7C2C1367A60086BE8F /* test.swift in Sources */,
 				263CA7B22C0A2D64009EAB42 /* ItemImage.swift in Sources */,
 				263CA7A22C0A2621009EAB42 /* ContentView.swift in Sources */,
 				263CA7B02C0A2BBA009EAB42 /* TabOne.swift in Sources */,
 				263CA7A02C0A2621009EAB42 /* DHAppApp.swift in Sources */,
 				26C46D882C11F64E009018B7 /* AddItemView.swift in Sources */,
 				26C46D862C11F253009018B7 /* MenuHistoryView.swift in Sources */,
+				26F85F7E2C136B7B0086BE8F /* MenuDetailView.swift in Sources */,
 				26F85F742C135F910086BE8F /* LMenu.swift in Sources */,
 				26C46D822C11E790009018B7 /* OpeningView.swift in Sources */,
 				26F85F762C13623F0086BE8F /* TabFour.swift in Sources */,

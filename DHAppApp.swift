@@ -13,6 +13,6 @@ struct interactiveAppsApp: App {
         WindowGroup {
             LoginView()
         }
-        }
     }
+}
 

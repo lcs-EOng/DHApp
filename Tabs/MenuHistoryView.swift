@@ -18,31 +18,28 @@ struct BMenuHistoryView: View {
     var body: some View {
         NavigationView {
             List(bMenuHistory, id: \.self) { item in
-                HStack {
-                    Text(item)
-                    Spacer()
-                    if item == selectedMenu {
-                        Image(systemName: "checkmark")
-                            .foregroundColor(.blue)
+                NavigationLink(destination: MenuDetailView(menuDetail: item)){
+                    HStack {
+                        Text(item)
+                        Spacer()
+                        if item == selectedMenu {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.blue)
+                        }
                     }
-                }
-                .contentShape(Rectangle()) // Ensures the entire row is tappable
-                .onTapGesture {
-                    selectedMenu = item
+                    .contentShape(Rectangle())
                 }
             }
             .navigationTitle("Breakfast Menus")
             .toolbar {
                 NavigationLink("Add New", destination: Item())
                 Spacer()
-                Button {} label: {
-                    Text("Next")
-                }
                 
             }
         }
     }
-}
+    }
+
 #Preview {
     BMenuHistoryView()
 }

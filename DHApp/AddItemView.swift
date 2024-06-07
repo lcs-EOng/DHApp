@@ -17,15 +17,11 @@ struct Item: View {
     @State private var textFieldData0 = ""
     @State private var textFieldData1 = ""
     @State private var textFieldData2 = ""
-    @State private var date = Date()
     @State private var isToggleOn = false
     @State private var meal = 0
     
     var body: some View {
         VStack{
-            Spacer()
-                .frame(height: 20)
-            
             Picker("Meals", selection: $meal) {
                 Text("Breakfast").tag(0)
                     .font(.title)
@@ -40,16 +36,7 @@ struct Item: View {
             .font(.title)
             Spacer()
                 .frame(height: 10 )
-            DatePicker("Date", selection: $date, displayedComponents: .date)
-                .frame(height: 50)
-                .padding()
-                .background(Rectangle()
-                    .fill(Color.green)
-                    .shadow(radius: 4)
-                    .opacity(0.2))
-                .font(.title)
-            Spacer()
-            HStack {
+                HStack {
                 
                 PhotosPicker(selection: $selectionResult, matching: .images) {
                     
@@ -75,7 +62,7 @@ struct Item: View {
                 
             }
             Spacer()
-                .frame(height: 100)
+                .frame(height: 50)
             TextField("Name of Food", text: $textFieldData0)
                 .font(.title)
                 .bold()
@@ -95,6 +82,7 @@ struct Item: View {
             
             
             Spacer()
+                .frame(height: 20)
             Button(action: {}) {
                 Text("Save Menu")
                     .padding()

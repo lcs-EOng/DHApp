@@ -41,7 +41,7 @@ struct TabView_TabItems: View {
                     Image(systemName: "takeoutbag.and.cup.and.straw.fill")
                     Text("Lunch")
                 }
-            BMenuHistoryView()
+            DMenu()
                 .tabItem{
                     Image(systemName: "fork.knife")
                     Text("Dinner")

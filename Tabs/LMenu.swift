@@ -14,31 +14,31 @@ struct LMenu: View {
             "2024-06-03: ",
         ]
     @State private var selectedMenu: String? = nil
+    @State private var meal = 1
 
+
+    
     var body: some View {
         NavigationView {
-                    List(LMenuHistory, id: \.self) { item in
-                        HStack {
-                            Text(item)
-                            Spacer()
-                            if item == selectedMenu {
-                                Image(systemName: "checkmark")
-                                    .foregroundColor(.blue)
-                            }
-                        }
-                        .contentShape(Rectangle()) // Ensures the entire row is tappable
-                        .onTapGesture {
-                            selectedMenu = item
+            List(LMenuHistory, id: \.self) { item in
+                NavigationLink(destination: MenuDetailView(menuDetail: item)){
+                    HStack {
+                        Text(item)
+                        Spacer()
+                        if item == selectedMenu {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.blue)
                         }
                     }
+                    .contentShape(Rectangle())
+                }
+            }
             .navigationTitle("Lunch Menus")
-                        .toolbar {
-                            NavigationLink("Add New", destination: Item())
-                            Spacer()
-                            Button {} label: {
-                                Text("Next")
-                            }
-                        }
+            .toolbar {
+                NavigationLink("Add New", destination: Item())
+                Spacer()
+                
+            }
         }
     }
 }
