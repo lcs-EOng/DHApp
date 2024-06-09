@@ -17,11 +17,12 @@ struct TabView_TabItems: View {
 
     var body: some View {
         TabView {
-            BMenuHistoryView()
+            BMenu()
                 .tabItem {
                     Image(systemName: "cup.and.saucer.fill")
                     Text("Breakfast")
                 }
+                .environment(MenuViewModel())
 
             LMenu()
                 .tabItem {
@@ -35,14 +36,16 @@ struct TabView_TabItems: View {
                     Image(systemName: "fork.knife")
                     Text("Dinner")
                 }
-               
+                .environment(MenuViewModel())
+
 
             TabFour()
                 .tabItem {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")
                 }
-                
+                .environment(MenuViewModel())
+
         }
         .onAppear {
             let appearance = UITabBarAppearance()

@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+
 
 
 @Observable
-class MenuViewModel {
+class MenuViewModel: ObservableObject {
     var foods: [MenuItem]
     
     init(foods:[MenuItem] = []){
@@ -31,5 +33,3 @@ struct MenuItem: Identifiable {
 
 
 let First = MenuItem(nameOfMeal: "Egg benedict", date: "september", mealType: "Dinner", image: "hi", ingredients: "No", calories: "150", hasAllergens: true)
-
-

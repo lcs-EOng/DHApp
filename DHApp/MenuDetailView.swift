@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct MenuDetailView: View {
+    @Environment(MenuViewModel.self) var viewModel
+
     let menuDetail: String
 
     var body: some View {
-        Text(menuDetail)
-            .navigationTitle("Menu Detail")
-            .navigationBarTitleDisplayMode(.inline)
+        VStack{
+            
+            Text(menuDetail)
+                .navigationTitle("Menu Detail")
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 
-#Preview {
-    MenuDetailView(menuDetail: "lol")
-}

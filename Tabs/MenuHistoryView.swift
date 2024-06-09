@@ -7,37 +7,48 @@
 
 import SwiftUI
 
-struct BMenuHistoryView: View {
-    let bMenuHistory = [
-        "2024-06-01: ",
-        "2024-06-02: ",
-        "2024-06-03: ",
-    ]
-    @State private var selectedMenu: String? = nil
+struct BMenu: View {
+    @State private var meal = 1
+    @State var presentingNewItemSheet = false
+    @State var searchText = ""
+    @Environment(MenuViewModel.self) var viewModel
+
+
     
     var body: some View {
         NavigationView {
-            List(bMenuHistory, id: \.self) { item in
-                NavigationLink(destination: MenuDetailView(menuDetail: item)){
-                    HStack {
-                        Text(item)
-                        Spacer()
-                        if item == selectedMenu {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(.blue)
-                        }
+            List(viewModel.foods) { item in
+                NavigationLink(destination: MenuDetailView(menuDetail: item.nameOfMeal)) {
+                    VStack(alignment: .leading) {
+                        Text("\(item.date): \(item.mealType)")
+                            .font(.headline)
+                        Text(item.nameOfMeal)
                     }
                     .contentShape(Rectangle())
                 }
             }
-            .navigationTitle("Breakfast Menus")
-            
-                
+            .searchable(text: $searchText)
+            .navigationTitle("Dinner Menus")
+            .sheet(isPresented: $presentingNewItemSheet) {
+             NewItemView(showSheet: $presentingNewItemSheet)
+
             }
+            
+            .toolbar {
+                // Add a button to trigger showing the sheet
+                ToolbarItem(placement: .automatic) {
+                    Button {
+                        presentingNewItemSheet = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+
+            
         }
     }
-    
-
+}
 #Preview {
-    BMenuHistoryView()
+    NewItemView(showSheet: .constant(true)).environment(MenuViewModel())
 }

@@ -23,7 +23,6 @@
 		26F85F762C13623F0086BE8F /* TabFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F752C13623F0086BE8F /* TabFour.swift */; };
 		26F85F782C1362590086BE8F /* DMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F772C1362590086BE8F /* DMenu.swift */; };
 		26F85F7A2C1366970086BE8F /* AddMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F792C1366970086BE8F /* AddMenu.swift */; };
-		26F85F7C2C1367A60086BE8F /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F7B2C1367A60086BE8F /* test.swift */; };
 		26F85F7E2C136B7B0086BE8F /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F85F7D2C136B7B0086BE8F /* MenuDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +44,6 @@
 		26F85F752C13623F0086BE8F /* TabFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabFour.swift; sourceTree = "<group>"; };
 		26F85F772C1362590086BE8F /* DMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMenu.swift; sourceTree = "<group>"; };
 		26F85F792C1366970086BE8F /* AddMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenu.swift; sourceTree = "<group>"; };
-		26F85F7B2C1367A60086BE8F /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		26F85F7D2C136B7B0086BE8F /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +108,6 @@
 				26F85F732C135F910086BE8F /* LMenu.swift */,
 				26F85F772C1362590086BE8F /* DMenu.swift */,
 				26C46D852C11F252009018B7 /* MenuHistoryView.swift */,
-				26F85F7B2C1367A60086BE8F /* test.swift */,
 				26F85F752C13623F0086BE8F /* TabFour.swift */,
 			);
 			path = Tabs;
@@ -199,7 +196,6 @@
 				26F85F782C1362590086BE8F /* DMenu.swift in Sources */,
 				26C46D842C11EF4E009018B7 /* LoginView.swift in Sources */,
 				26F85F7A2C1366970086BE8F /* AddMenu.swift in Sources */,
-				26F85F7C2C1367A60086BE8F /* test.swift in Sources */,
 				263CA7B22C0A2D64009EAB42 /* ItemImage.swift in Sources */,
 				267797C32C1642AA0029AC1F /* ViewModel.swift in Sources */,
 				263CA7A22C0A2621009EAB42 /* ContentView.swift in Sources */,

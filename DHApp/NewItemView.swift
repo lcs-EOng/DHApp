@@ -10,13 +10,13 @@ import SwiftUI
 struct NewItemView: View {
     
     // MARK: Stored properties
-    @State var newItemImage: UIImage?
-    @State var nameOfFood = ""
-    @State var ingridients = ""
-    @State var calories = ""
-    @State var isToggleOn = false
-    @State var meal = 0
-    @State var date = Date()
+    @State private var newItemImage: UIImage?
+    @State private var nameOfFood = ""
+    @State private var ingridients = ""
+    @State private var calories = ""
+    @State private var isToggleOn = false
+    @State private var meal = 0
+    @State private var date = Date()
     // The item currently being added
     @State var newItemDescription = ""
     @Environment(MenuViewModel.self) var viewModel
@@ -67,6 +67,7 @@ struct NewItemView: View {
                     TextField("What is the amount of calories?", text: $calories)
                         .padding(.horizontal)
                         .padding()
+                        .keyboardType(.numberPad)
                     HStack{
                         Toggle("Any Allergens?", isOn: $isToggleOn)
                             .padding()
@@ -79,30 +80,19 @@ struct NewItemView: View {
                         ingridients = ""
                         calories = ""
                         isToggleOn = false
+                        showSheet = false
                     }
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .disabled(nameOfFood.isEmpty == true)
+                    .disabled(ingridients.isEmpty == true)
+                    .disabled(calories.isEmpty == true)
+
+
                     
                     
                 }
             }
             
             Spacer()
-        }
-        .toolbar {
-            ToolbarItem(placement: .automatic) {
-                Button {
-                    showSheet = false
-                } label: {
-                    Text("Done")
-                        .bold()
-
-        .padding(20)
-                        }
-                
-            }
         }
     }
     
