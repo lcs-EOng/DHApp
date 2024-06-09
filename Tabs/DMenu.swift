@@ -31,14 +31,12 @@ struct DMenu: View {
                 }
             }
             .navigationTitle("Dinner Menus")
-            .toolbar {
-                NavigationLink("Add New", destination: Item())
-                Spacer()
+            
                 
                 }
             }
         }
-    }
+    
 
 
 

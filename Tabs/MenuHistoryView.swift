@@ -31,14 +31,12 @@ struct BMenuHistoryView: View {
                 }
             }
             .navigationTitle("Breakfast Menus")
-            .toolbar {
-                NavigationLink("Add New", destination: Item())
-                Spacer()
+            
                 
             }
         }
     }
-    }
+    
 
 #Preview {
     BMenuHistoryView()
