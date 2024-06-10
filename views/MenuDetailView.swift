@@ -18,6 +18,10 @@ struct MenuDetailView: View {
             Text(menuDetail)
                 .navigationTitle("Menu Detail")
                 .navigationBarTitleDisplayMode(.inline)
+            HStack{
+                Text("Calories:")
+                Text(bFast.calories)
+            }
         }
     }
 }

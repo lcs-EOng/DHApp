@@ -62,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				263CA79F2C0A2621009EAB42 /* DHAppApp.swift */,
+				267797C42C177C290029AC1F /* views */,
 				267797BF2C162B0C0029AC1F /* Model */,
 				263CA7AE2C0A2BAC009EAB42 /* Tabs */,
 				263CA79E2C0A2621009EAB42 /* DHApp */,
@@ -80,8 +81,6 @@
 		263CA79E2C0A2621009EAB42 /* DHApp */ = {
 			isa = PBXGroup;
 			children = (
-				26F85F7D2C136B7B0086BE8F /* MenuDetailView.swift */,
-				267797C02C1635970029AC1F /* NewItemView.swift */,
 				263CA7A12C0A2621009EAB42 /* ContentView.swift */,
 				26F85F792C1366970086BE8F /* AddMenu.swift */,
 				26C46D812C11E790009018B7 /* OpeningView.swift */,
@@ -120,6 +119,15 @@
 				267797C22C1642AA0029AC1F /* ViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		267797C42C177C290029AC1F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				26F85F7D2C136B7B0086BE8F /* MenuDetailView.swift */,
+				267797C02C1635970029AC1F /* NewItemView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
