@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+
+
 struct LMenu: View {
-    @State private var meal = 1
     @State private var presentingNewItemSheet = false
     @State var searchText = ""
-    @State private var menus : [MenuItem] = exampleMenu
+    @State var menus : [MenuItem] = exampleMenu
+    @State private var meal = 1
 
 
     
@@ -20,7 +22,8 @@ struct LMenu: View {
             List(menus) { item in
                 NavigationLink(destination: MenuDetailView(menuDetail: item.nameOfMeal)) {
                     VStack(alignment: .leading) {
-                        Text("\(item.date): \(item.mealType)")
+                        Text("\(formatDate(item.dateOfFood)): \(item.mealType)")
+                                                   .font(.headline)
                             .font(.headline)
                         Text(item.nameOfMeal)
                         if item.hasAllergens == true{
@@ -36,7 +39,7 @@ struct LMenu: View {
             .searchable(text: $searchText)
             .navigationTitle("Lunch Menus")
             .sheet(isPresented: $presentingNewItemSheet) {
-             NewItemView(showSheet: $presentingNewItemSheet)
+                NewItemView(menus: $menus, showSheet: $presentingNewItemSheet)
 
             }
             
@@ -48,6 +51,7 @@ struct LMenu: View {
                     } label: {
                         Image(systemName: "plus")
                     }
+                    
                 }
             }
 
@@ -58,5 +62,5 @@ struct LMenu: View {
     }
 
 #Preview {
-    LMenu().environment(MenuViewModel())
+    LMenu( menus: [breakfast]).environment(MenuViewModel())
 }

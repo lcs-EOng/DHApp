@@ -20,7 +20,7 @@ struct MenuDetailView: View {
                 .navigationBarTitleDisplayMode(.inline)
             HStack{
                 Text("Calories:")
-                Text(bFast.calories)
+                Text(breakfast.calories)
             }
         }
     }

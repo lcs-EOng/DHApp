@@ -17,12 +17,10 @@ struct NewItemView: View {
     @State private var isToggleOn = false
     @State private var meal = 0
     @State private var date = Date()
-    // The item currently being added
-    @State var newItemDescription = ""
-    @Environment(MenuViewModel.self) var viewModel
+    @State private var allergens = ""
+    @Binding var menus: [MenuItem]
+    
 
-    // Access the view model through the environment
-    // @Environment(TodoListViewModel.self) var viewModel
     
     // Binding to control whether this view is visible
     @Binding var showSheet: Bool
@@ -73,6 +71,14 @@ struct NewItemView: View {
                             .padding()
                             .accentColor(Color.green)
                     }
+                    if isToggleOn == true{
+                        TextField("What are the allergens?", text: $allergens)
+                            .padding(.horizontal)
+                            .padding()
+                    }
+                    
+                    Spacer()
+                        .frame(height: 50)
                     Button("Save Menu") {
                         saveFoodItem(withTitle: nameOfFood)
                         
@@ -98,16 +104,18 @@ struct NewItemView: View {
     
     func saveFoodItem(withTitle title: String) {
        let mealTypes = ["Breakfast", "Lunch", "Dinner"]
-        let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = .short
-                let date = dateFormatter.string(from: date)
-               let menuItem = MenuItem(nameOfMeal: nameOfFood, date: date, mealType: mealTypes[meal], image: calories, ingredients: ingridients, calories: calories, hasAllergens: isToggleOn
+               let menuItem = MenuItem(nameOfMeal: nameOfFood, dateOfFood: date, mealType: mealTypes[meal], image: "", ingredients: ingridients, calories: calories, hasAllergens: isToggleOn
                )
-        viewModel.foods.append(menuItem)
+        menus.append(menuItem)
 
     }
-}
+
+    }
+
+
+
 
 #Preview {
-    NewItemView(showSheet: .constant(true)).environment(MenuViewModel())
+    NewItemView(menus: .constant(exampleMenu), showSheet: .constant(true))
+        .environment(MenuViewModel())
 }
