@@ -91,6 +91,7 @@ struct NewItemView: View {
                     .disabled(nameOfFood.isEmpty == true)
                     .disabled(ingridients.isEmpty == true)
                     .disabled(calories.isEmpty == true)
+                    .disabled(isToggleOn && allergens.isEmpty)
 
 
                     
@@ -101,10 +102,10 @@ struct NewItemView: View {
             Spacer()
         }
     }
-    
+    //MARK: Functions
     func saveFoodItem(withTitle title: String) {
        let mealTypes = ["Breakfast", "Lunch", "Dinner"]
-               let menuItem = MenuItem(nameOfMeal: nameOfFood, dateOfFood: date, mealType: mealTypes[meal], image: "", ingredients: ingridients, calories: calories, hasAllergens: isToggleOn
+        let menuItem = MenuItem(nameOfMeal: nameOfFood, dateOfFood: date, mealType: mealTypes[meal], image: "", ingredients: ingridients, calories: calories, hasAllergens: isToggleOn, allergens: isToggleOn ? allergens : nil
                )
         menus.append(menuItem)
 

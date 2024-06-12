@@ -10,20 +10,23 @@ import SwiftUI
 
 
 struct LMenu: View {
-    @State private var presentingNewItemSheet = false
+    //MARK: Stored properties
     @State var searchText = ""
     @State var menus : [MenuItem] = exampleMenu
     @State private var meal = 1
-
+    //So the sheet is hidden
+    @State private var presentingNewItemSheet = false
 
     
+    
+    //MARK: Computed properties
     var body: some View {
         NavigationView {
             List(menus) { item in
-                NavigationLink(destination: MenuDetailView(menuDetail: item.nameOfMeal)) {
+                NavigationLink(destination: MenuDetailView(menuDetail: item)) {
                     VStack(alignment: .leading) {
                         Text("\(formatDate(item.dateOfFood)): \(item.mealType)")
-                                                   .font(.headline)
+                            .font(.headline)
                             .font(.headline)
                         Text(item.nameOfMeal)
                         if item.hasAllergens == true{
@@ -40,7 +43,7 @@ struct LMenu: View {
             .navigationTitle("Lunch Menus")
             .sheet(isPresented: $presentingNewItemSheet) {
                 NewItemView(menus: $menus, showSheet: $presentingNewItemSheet)
-
+                
             }
             
             .toolbar {
@@ -54,12 +57,28 @@ struct LMenu: View {
                     
                 }
             }
-
+            
             
         }
     }
-    
+    //MARK: Functions
+    func filter(menus: [MenuItem], on providedText : String) -> [MenuItem]{
+        if providedText.isEmpty{
+            return menus
+        }else{
+            var filteredMenus: [MenuItem] = []
+            
+            for menu in filteredMenus {
+                if menu.nameOfMeal.contains(providedText){
+                    filteredMenus.append(menu)
+                }
+                
+            }
+            return filteredMenus
+        }
     }
+    
+}
 
 #Preview {
     LMenu( menus: [breakfast]).environment(MenuViewModel())

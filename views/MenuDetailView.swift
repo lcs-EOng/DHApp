@@ -8,21 +8,46 @@
 import SwiftUI
 
 struct MenuDetailView: View {
-    @Environment(MenuViewModel.self) var viewModel
+    //MARK: Stored properties
+    let menuDetail: MenuItem
 
-    let menuDetail: String
-
+    //MARK: Computed properties
     var body: some View {
-        VStack{
-            
-            Text(menuDetail)
-                .navigationTitle("Menu Detail")
-                .navigationBarTitleDisplayMode(.inline)
-            HStack{
-                Text("Calories:")
-                Text(breakfast.calories)
+        NavigationView{
+            VStack{
+                
+                Text(menuDetail.nameOfMeal)
+                    .font(.title)
+                    .bold()
+                Text("Calories:  \(menuDetail.calories)")
+                    .padding()
+                Text("Ingridients:  \(menuDetail.ingredients)")
+                    .padding()
+                Text("Date Served:  \(formatDate(menuDetail.dateOfFood))")
+                    .padding()
+                if menuDetail.hasAllergens == true{
+                    VStack{
+                        Text("Food has allergens")
+                            .foregroundStyle(.red)
+                            .bold()
+                        if let allergens = menuDetail.allergens{
+                            Text("Allergens: \(allergens)")
+                        }
+                    }}else
+                {
+                    Text("Food has no Allergens")
+                        .foregroundStyle(.green)
+                }
+                
             }
         }
+        .navigationTitle("Menu Detail")
+        .navigationBarTitleDisplayMode(.inline)
     }
+   
 }
 
+
+#Preview {
+    MenuDetailView(menuDetail: breakfast)
+}

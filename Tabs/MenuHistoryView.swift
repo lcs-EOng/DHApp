@@ -20,7 +20,7 @@ struct BMenu: View {
     var body: some View {
         NavigationView {
             List(menus) { item in
-                NavigationLink(destination: MenuDetailView(menuDetail: item.nameOfMeal)) {
+                NavigationLink(destination: MenuDetailView(menuDetail: item)) {
                     VStack(alignment: .leading) {
                         Text("\(formatDate(item.dateOfFood)): \(item.mealType)")
                                                    .font(.headline)

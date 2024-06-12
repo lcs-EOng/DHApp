@@ -10,6 +10,7 @@ struct MenuItem: Identifiable {
     let ingredients: String
     let calories: String
     let hasAllergens: Bool
+    let allergens: String?
 }
 func formatDate(_ date: Date) -> String {
     let dateFormatter = DateFormatter()
@@ -24,7 +25,8 @@ let breakfast = MenuItem(
     image: "egg_benedict.jpg",
     ingredients: "Eggs, Ham, English Muffin, Hollandaise Sauce",
     calories: "250",
-    hasAllergens: true
+    hasAllergens: true,
+    allergens: "Egg, Dairy"
 )
 
 let lunch = MenuItem(
@@ -34,7 +36,8 @@ let lunch = MenuItem(
     image: "sandwich.jpg",
     ingredients: "Bread, Cheese, Bacon, Lettuce, Tomato",
     calories: "500",
-    hasAllergens: false
+    hasAllergens: false,
+    allergens: nil
 )
 
 // Create an example menu
