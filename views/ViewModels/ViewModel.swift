@@ -5,21 +5,35 @@
 //  Created by Ong Eason on 9/6/2024.
 //
 
+
 import Foundation
-import SwiftUI
-
-
 
 @Observable
 class MenuViewModel: ObservableObject {
-    var foods: [MenuItem]
+    @Published var menus: [MenuItem] = []
     
-    init(foods:[MenuItem] = []){
-        self.foods = foods
+    init() {
+        Task {
+            await fetchMenus()
+        }
     }
     
-    
+    func fetchMenus() async {
+        do {
+            let results: [MenuItem] = try await supabase
+                .from("Food_Item")
+                .select()
+                .execute()
+                .value
+            
+        
+                self.menus = results
+        } catch {
+            debugPrint(error)
+        }
+    }
 }
+
 
 
 

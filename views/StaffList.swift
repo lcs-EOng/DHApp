@@ -1,30 +1,27 @@
-//
-//  StaffList.swift
-//  DHApp
-//
-//  Created by Ong Eason on 13/6/2024.
-//
-
 import SwiftUI
 
-
-struct StaffListView: View {
-    //MARK: Stored properties
+struct StaffListsView: View {
+    // MARK: Stored properties
     @State private var viewModel = StaffListViewModel()
 
-    //MARK: Computed properties
+    // MARK: Computed properties
     var body: some View {
-        NavigationStack{
-            List(viewModel.staffs) { staff in
-               HStack {
+        NavigationStack {
+            List(viewModel.staffsWithFoodItem) { staff in
+               NavigationLink{
+                   MenuListView(staff: staff)
+               }label:{
                    Text("\(staff.first_name) \(staff.last_name)")
-                }
+               }
+                .padding(.vertical, 10)
             }
             .navigationTitle("Staffs")
         }
     }
+   
+
 }
 
 #Preview {
-    StaffListView()
+    StaffListsView()
 }
