@@ -1,8 +1,8 @@
 import Foundation
 
 // Define the MenuItem struct
-struct MenuItem: Identifiable {
-    let id = UUID()
+struct MenuItem: Identifiable, Codable {
+    var id: Int?
     let nameOfMeal: String
     let dateOfFood: Date
     let mealType: String

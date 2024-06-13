@@ -118,5 +118,4 @@ struct NewItemView: View {
 
 #Preview {
     NewItemView(menus: .constant(exampleMenu), showSheet: .constant(true))
-        .environment(MenuViewModel())
 }

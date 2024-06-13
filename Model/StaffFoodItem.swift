@@ -12,10 +12,20 @@ struct StaffFoodItem: Identifiable, Codable{
     //MARK: Computed properties
     let id: Int
     let name: String
-    let staff: [MenuItems]
+    let menus: [MenuItems]
     
-    struct MenuItems: Identifiable, Codable{
+    enum CodingKeys: String, CodingKey{
+        case id
+        case name
+        case menus = "menu"
+    }
+    
+    struct MenuItems : Identifiable, Codable{
         let id: Int
         let name: String
+        let ingridients: String
+        let calories: Int
+        let allergens: String
+        let anyAllergens: Bool
     }
 }
