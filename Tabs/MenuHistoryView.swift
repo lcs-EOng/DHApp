@@ -62,5 +62,5 @@ struct BMenu: View {
     }
 
 #Preview {
-    BMenu( menus: [breakfast])
+    BMenu( menus: [breakfast]).environment(MenuViewModel())
 }

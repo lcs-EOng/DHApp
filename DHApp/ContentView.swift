@@ -22,30 +22,22 @@ struct TabView_TabItems: View {
                     Image(systemName: "cup.and.saucer.fill")
                     Text("Breakfast")
                 }
-                .environment(MenuViewModel())
-
             LMenu()
                 .tabItem {
                     Image(systemName: "takeoutbag.and.cup.and.straw.fill")
                     Text("Lunch")
                 }
-                .environment(MenuViewModel())
-
             DMenu()
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Dinner")
                 }
-                .environment(MenuViewModel())
-
 
             TabFour()
                 .tabItem {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")
-                }
-                .environment(MenuViewModel())
-	
+                }	
         }
         .onAppear {
             let appearance = UITabBarAppearance()
