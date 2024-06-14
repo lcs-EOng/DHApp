@@ -6,33 +6,61 @@
 //
 
 
+// ViewModel.swift
+// DHApp
+
 import Foundation
 
 @Observable
-class MenuViewModel: ObservableObject {
-    @Published var menus: [MenuItem] = []
-    
+class MenuViewModel: Observable{
+    // MARK: Stored properties
+    var menus: [FoodItem] = []
+    var menusWithProperties: [MenuItem] = []
+    // MARK: Initializer
     init() {
         Task {
-            await fetchMenus()
+            
+            try await fetchMenus()
+            
         }
-    }
+        Task{
+                try await getMenusWithProperties()
+            }
+            
+        }
     
-    func fetchMenus() async {
+    
+    // MARK: Functions
+    func getMenusWithProperties() async throws {
         do {
-            let results: [MenuItem] = try await supabase
-                .from("Food_Item")
-                .select()
+            let results: [FoodItem] = try await supabase
+                .from("food_item")
+                .select("id, name, calories, ingredients, allergens, allergies")
                 .execute()
                 .value
             
-        
-                self.menus = results
+            self.menus = results
         } catch {
             debugPrint(error)
         }
     }
-}
+    func fetchMenus() async throws {
+        do {
+            let results: [MenuItem] = try await supabase
+                .from("food_item")
+                .select()
+                .execute()
+                .value
+            
+            self.menusWithProperties = results
+        } catch {
+            debugPrint(error)
+        }
+    }
+  
+    }
+
+
 
 
 

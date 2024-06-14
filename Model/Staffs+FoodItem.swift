@@ -12,14 +12,12 @@ struct StaffFoodItem: Identifiable, Codable{
     let id: Int
     let first_name: String
     let last_name: String
-    let email: String
     let foodItem: [FoodItem]
     
     enum CodingKeys: String, CodingKey{
         case id
         case first_name
         case last_name
-        case email
         case foodItem = "food_item"
     }
     

@@ -16,20 +16,21 @@ struct LMenu: View {
     @State private var meal = 1
     //So the sheet is hidden
     @State private var presentingNewItemSheet = false
+    @State private var viewModel = MenuViewModel()
 
     
     
     //MARK: Computed properties
     var body: some View {
         NavigationView {
-            List(menus) { item in
-                NavigationLink(destination: MenuDetailView(menuDetail: item)) {
+            List($viewModel.menusWithProperties) { $food in
+                NavigationLink(destination: MenuDetailView(menuDetail: food)) {
                     VStack(alignment: .leading) {
-                        Text("\(formatDate(item.dateOfFood)): \(item.mealType)")
+                        Text("\(formatDate(food.dateOfFood)): \(food.mealType)")
                             .font(.headline)
                             .font(.headline)
-                        Text(item.nameOfMeal)
-                        if item.hasAllergens == true{
+                        Text(food.nameOfMeal)
+                        if food.hasAllergens == true{
                             Text("Food has allergens")
                         } else
                         {
@@ -42,7 +43,7 @@ struct LMenu: View {
             .searchable(text: $searchText)
             .navigationTitle("Lunch Menus")
             .sheet(isPresented: $presentingNewItemSheet) {
-                NewItemView(menus: $menus, showSheet: $presentingNewItemSheet)
+                NewItemView(showSheet: $presentingNewItemSheet)
                 
             }
             
@@ -81,5 +82,5 @@ struct LMenu: View {
 }
 
 #Preview {
-    LMenu( menus: [breakfast]).environment(MenuViewModel())
+    LMenu()
 }

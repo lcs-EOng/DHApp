@@ -1,15 +1,11 @@
 //
-//  StaffList.swift
+//  StaffLists.swift
 //  DHApp
 //
-//  Created by Ong Eason on 12/6/2024.
+//  Created by Ong Eason on 13/6/2024.
 //
 
-
-
-
 import SwiftUI
-
 
 struct StaffListsView: View {
     // MARK: Stored properties

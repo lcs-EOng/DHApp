@@ -39,7 +39,7 @@ struct BMenu: View {
             .searchable(text: $searchText)
             .navigationTitle("Breakfast Menus")
             .sheet(isPresented: $presentingNewItemSheet) {
-                NewItemView(menus: $menus, showSheet: $presentingNewItemSheet)
+                NewItemView(showSheet: $presentingNewItemSheet)
 
             }
             

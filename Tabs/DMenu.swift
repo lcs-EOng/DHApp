@@ -39,7 +39,7 @@ struct DMenu: View {
             .searchable(text: $searchText)
             .navigationTitle("Dinner Menus")
             .sheet(isPresented: $presentingNewItemSheet) {
-                NewItemView(menus: $menus, showSheet: $presentingNewItemSheet)
+                NewItemView(showSheet: $presentingNewItemSheet)
 
             }
             
@@ -62,5 +62,5 @@ struct DMenu: View {
     }
 
 #Preview {
-    DMenu( menus: [breakfast])
+    DMenu( menus: [breakfast, lunch])
 }
