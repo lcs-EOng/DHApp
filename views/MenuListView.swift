@@ -10,12 +10,30 @@ import SwiftUI
 struct MenuListView: View {
     //MARK: Stored Properties
     let staff: StaffFoodItem
+    @State private var isShowing = false
+    
     //MARK: Computed properties
     var body: some View {
         List(staff.foodItem) { foodItem in
             Text(foodItem.name)
         }
-        .navigationTitle("\(staff.first_name) \(staff.last_name)")
+        .sheet(isPresented: $isShowing){
+            AddFoodItemView(
+                isShwoing: $isShowing,
+                currentStaff: staff
+                )
+            .presentationDetents([.fraction(0.2)])
+        }
+        .toolbar{
+            ToolbarItem{
+                Button{
+                    isShowing = true
+                } label:{
+                    Image(systemName: "plus")
+                }
+            }
+        }
+        .navigationTitle("Food Item")
 
         
     }

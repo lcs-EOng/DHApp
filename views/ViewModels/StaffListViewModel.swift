@@ -54,4 +54,20 @@ class StaffListViewModel: Observable{
             debugPrint(error)
         }
     }
+    
+    func add(foodItem: String, calories: Int, ingredients: String,in staff: StaffFoodItem){
+        Task{
+            let newFoodItem = FoodItem(name: foodItem, staffId: staff.id, calories: calories, ingredients: ingredients)
+            do{
+                try await supabase
+                    .from("food_item")
+                    .insert(newFoodItem)
+                    .execute()
+                
+                try await self.getStaffsWithFoodItem()
+            } catch{
+                debugPrint(error)
+            }
+        }
+    }
 }

@@ -21,11 +21,15 @@ struct FoodItem: Identifiable, Codable {
     var id: Int?
     let name: String
     let staffId: Int
+    let calories: Int
+    let ingredients: String
     }
 
 enum CodingKeys: String, CodingKey{
     case id
    case name
     case staffId = "staff_id"
+    case calories
+    case ingredients
 }
 

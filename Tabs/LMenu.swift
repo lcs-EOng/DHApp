@@ -12,11 +12,11 @@ import SwiftUI
 struct LMenu: View {
     //MARK: Stored properties
     @State var searchText = ""
-    @State var menus : [MenuItem] = exampleMenu
-    @State private var meal = 1
+    @State var meal = 1
     //So the sheet is hidden
-    @State private var presentingNewItemSheet = false
-    @State private var viewModel = MenuViewModel()
+    @State  var presentingNewItemSheet = false
+    //The View Model
+    @State var viewModel = MenuViewModel()
 
     
     
@@ -82,5 +82,5 @@ struct LMenu: View {
 }
 
 #Preview {
-    LMenu()
+    LMenu().environment(MenuViewModel())
 }

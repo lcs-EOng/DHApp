@@ -17,6 +17,7 @@ struct StaffListsView: View {
             List(viewModel.staffsWithFoodItem) { staff in
                NavigationLink{
                    MenuListView(staff: staff)
+                       .environment(viewModel)
                }label:{
                    Text("\(staff.first_name) \(staff.last_name)")
                }
